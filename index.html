@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combine PDFs and Images to PDF</title>
+
+<style>
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.list-files, .imageContainer {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.imageBox {
+    display: inline-block;
+    margin: 10px;
+}
+
+img {
+    height: 75px;
+}
+
+.btn-remove, .deleteButton {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Combine PDFs and Images to PDF</h1>
+    </header>
+
+    <div class="container">
+        <h2>PDF and Image Uploader</h2>
+        
+        <!-- PDF Section -->
+        <div class="list-files">
+            <div class="no-files">No PDF files added</div>
+        </div>
+        <input type="file" id="pdf-file" accept="application/pdf" style="display:none">
+        <button class="btn-join" onclick="$('#pdf-file').click()">Add PDF</button>
+        
+        <!-- Image Section -->
+        <input type="file" id="fileInput" multiple accept="image/*" style="display:none">
+        <button id="addImageButton">Add Images</button>
+        
+        <div id="imageContainer"></div>
+
+        <!-- Combine and Export -->
+        <button id="combineButton">Combine to PDF</button>
+        <div id="pdfDownloadLink"></div>
+    </div>
+
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script> 
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
